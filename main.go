@@ -203,7 +203,7 @@ func find(data VsCodeTheme, keys ...string) Style {
 					scopes = append(scopes, strings.TrimSpace(s))
 				}
 			default:
-				panic(fmt.Sprintf("Unecpected scope type %s", rt))
+				panic(fmt.Sprintf("Unexpected scope type %s", rt))
 			}
 
 			for i, scope := range scopes {
