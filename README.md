@@ -40,3 +40,61 @@ go build
 ./codemirror-themes
 npm i
 ```
+
+## [Old Codemirror Themes](https://codemirror.net/5/demo/theme.html)
+
+- 3024-day
+- 3024-night
+- abcdef
+- ambiance
+- ambiance-mobile
+- base16-dark
+- base16-light
+- bespin
+- blackboard
+- cobalt
+- colorforth
+- dracula
+- eclipse
+- elegant
+- erlang-dark
+- hopscotch
+- icecoder
+- isotope
+- lesser-dark
+- liquibyte
+- material
+- mbo
+- mdn-like
+- midnight
+- monokai" selected="
+- neat
+- neo
+- night
+- paraiso-dark
+- paraiso-light
+- pastel-on-dark
+- railscasts
+- rubyblue
+- seti
+- solarized
+- the-matrix
+- tomorrow-night-bright
+- tomorrow-night-eighties
+- ttcn
+- twilight
+- vibrant-ink
+- xq-dark
+- xq-light
+- yeti
+- zenburn
+
+## Used Codemirror Themes
+
+- [x] dracula
+- [ ] pastel-on-dark
+- [ ] monokai
+- [ ] rubyblue
+- [ ] cobalt
+- [ ] blackboard
+- [ ] zenburn

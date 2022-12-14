@@ -50,7 +50,6 @@ func main() {
 		},
 		{
 			Name: "material-light",
-
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/33.4.0/vspackage",
 			Target: "material",
 			File:   "extension/build/themes/Material-Theme-Lighter.json",
@@ -98,6 +97,22 @@ func main() {
 			File:   "extension/themes/tokyo-night-storm-color-theme.json",
 			Dark:   true,
 		},
+		// {
+		// 	Name:   "zenburn",
+		// 	URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/zenburn/2.1.3/vspackage",
+		// 	Target: "zenburn",
+		// 	File:   "extension/themes/zenburn.json",
+		// 	Dark:   true,
+		// },
+		// TODO: built-in theme - data from built-in folder instead of marketplace
+		// {
+		// 	Name:   "monokai",
+		// 	URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/vscode/vsextensions/theme-monokai/1.0.0/vspackage",
+		// 	Target: "monokai",
+		// 	File:   "extension/themes/Monokai-ST3-color-theme.json",
+		// 	Dark:   true,
+		// },
+
 	}
 
 	for _, theme := range themes {
@@ -258,7 +273,7 @@ func makeTemplateParams(theme Theme, content []byte) TemplateParams {
 		Dark:         theme.Dark,
 		// Layout
 		Background:         find(data, "editor.background"),
-		Foreground:         find(data, "foreground", "input.foreground"),
+		Foreground:         find(data, "foreground", "input.foreground"), // TODO: if it's not there then: editor.foreground
 		Selection:          find(data, "editor.selectionBackground"),
 		Cursor:             find(data, "editorCursor.foreground", "foreground"),
 		DropdownBackground: find(data, "editor.background"),
