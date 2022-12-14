@@ -89,12 +89,22 @@ npm i
 - yeti
 - zenburn
 
-## Used Codemirror Themes
+## Target Codemirror Themes
 
 - [x] dracula
+- [x] zenburn
+- [x] material
+- [ ] aura
+- [ ] tokyo
+- [ ] github
+- [ ] one dark pro
+- [ ] shades of purple?
 - [ ] pastel-on-dark
 - [ ] monokai
 - [ ] rubyblue
 - [ ] cobalt
 - [ ] blackboard
-- [ ] zenburn
+- [ ] ayu
+- [ ] nord
+- [ ] gruvbox-dark
+- [ ] gruvbox-light

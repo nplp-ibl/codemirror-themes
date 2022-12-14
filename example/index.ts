@@ -20,7 +20,7 @@ const doc = document.getElementById('code').textContent.trim()
 const createEditor = (theme, name) => {
   console.log(theme)
   const view = new EditorView({
-    doc: '// theme: ' + name + '\n'+ doc,
+    doc: '// Theme: ' + name + '\n\n'+ doc,
     extensions: [
       lineNumbers(),
       highlightActiveLine(),
