@@ -1,5 +1,5 @@
 import {EditorView, highlightActiveLine, lineNumbers} from '@codemirror/view'
-import {javascript} from '@codemirror/lang-javascript'
+import {xml} from '@codemirror/lang-xml'
 import {autocompletion} from '@codemirror/autocomplete'
 import {aura} from '../theme/aura'
 import {dracula} from '../theme/dracula'
@@ -24,7 +24,7 @@ const createEditor = (theme, name) => {
     extensions: [
       lineNumbers(),
       highlightActiveLine(),
-      javascript({typescript: true}),
+      xml(),
       autocompletion(),
       theme,
     ],

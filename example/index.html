@@ -1,36 +1,47 @@
-<style>
-body { margin: 1px }
-#examples {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-.cm-scroller {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo</title>
+  <style>
+    body { margin: 1px }
+    #examples {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+    .cm-scroller {
 
-}
-.cm-editor {
-  margin: 1px;
-}
+    }
+    .cm-editor {
+      margin: 1px;
+    }
 
-.cm-editor .cm-content { font-family: "Fira Code", monospace; }
+    .cm-editor .cm-content { font-family: "Fira Code", monospace; }
 
-</style>
-<div id="examples"></div>
-<script type="module" src="./index.ts"></script>
+    </style>
+</head>
+<body>
+
+  <div id="examples"></div>
+  <script type="module" src="./index.ts"></script>
 <script type="text/template" id="code">
-import { param } from 'module';
-
-const btn = document.getElementById('btn');
-let count: number = 0;
-
-function render() {
-  btn.innerText = `Count: ${count}`;
-}
-
-btn.addEventListener('click', (e) => {
-  // Count from 1 to 10.
-  if (count < 10) {
-    count += 1;
-    render();
-  }
-});
+<name type="place" key="2302">P.O. Box 562<lb/>
+Stockbridge, Mass.</name><lb/>
+27 kwietnia 48<lb/>
+<name type="person" key="385">Kochany Mietku,</name>
+<lb/>
+Daty dla banku przedstawiają się następująco:
+wyjazd z
+<name type="place" key="1600">Francji</name>
+do
+<name type="place" key="2935">Portugalii</name>
+we wrześniu 1940, wyjazd z
+<name type="place" key="3627">Lizbony</name>
+do
+<name type="place" key="1769">Brazylii</name>.
 </script>
+</body>
+</html>
+
