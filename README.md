@@ -108,3 +108,4 @@ npm i
 - [ ] nord
 - [ ] gruvbox-dark
 - [ ] gruvbox-light
+- [ ] panda-syntax
