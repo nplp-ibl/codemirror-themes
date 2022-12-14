@@ -12,13 +12,15 @@ import {solarizedLight} from '../theme/solarized-light'
 import {tokyoNight} from '../theme/tokyo-night'
 import {tokyoNightStorm} from '../theme/tokyo-night-storm'
 import {tokyoNightDay} from '../theme/tokyo-night-day'
+import {zenburn} from '../theme/zenburn'
 
 const parent = document.getElementById('examples')
 const doc = document.getElementById('code').textContent.trim()
 
-const createEditor = (theme) => {
+const createEditor = (theme, name) => {
+  console.log(theme)
   const view = new EditorView({
-    doc,
+    doc: '// theme: ' + name + '\n'+ doc,
     extensions: [
       lineNumbers(),
       highlightActiveLine(),
@@ -30,14 +32,15 @@ const createEditor = (theme) => {
   })
 }
 
-createEditor(aura)
-createEditor(dracula)
-createEditor(githubDark)
-createEditor(githubLight)
-createEditor(materialDark)
-createEditor(materialLight)
-createEditor(solarizedDark)
-createEditor(solarizedLight)
-createEditor(tokyoNight)
-createEditor(tokyoNightStorm)
-createEditor(tokyoNightDay)
+createEditor(aura, 'aura')
+createEditor(dracula, 'dracula')
+createEditor(githubDark, 'githubDark')
+createEditor(githubLight,'githubLight')
+createEditor(materialDark,'materialDark')
+createEditor(materialLight,'materialLight')
+createEditor(solarizedDark,'solarizedDark')
+createEditor(solarizedLight,'solarizedLight')
+createEditor(tokyoNight,'tokyoNight')
+createEditor(tokyoNightStorm,'tokyoNightStorm')
+createEditor(tokyoNightDay,'tokyoNightDay')
+createEditor(zenburn,'zenburn')

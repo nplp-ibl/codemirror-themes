@@ -97,22 +97,20 @@ func main() {
 			File:   "extension/themes/tokyo-night-storm-color-theme.json",
 			Dark:   true,
 		},
-		// {
-		// 	Name:   "zenburn",
-		// 	URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/zenburn/2.1.3/vspackage",
-		// 	Target: "zenburn",
-		// 	File:   "extension/themes/zenburn.json",
-		// 	Dark:   true,
-		// },
+		{
+			Name:   "zenburn",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/zenburn/2.1.3/vspackage",
+			Target: "zenburn",
+			File:   "extension/themes/zenburn.json",
+			Dark:   true,
+		},
 		// TODO: built-in theme - data from built-in folder instead of marketplace
 		// {
 		// 	Name:   "monokai",
-		// 	URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/vscode/vsextensions/theme-monokai/1.0.0/vspackage",
 		// 	Target: "monokai",
-		// 	File:   "extension/themes/Monokai-ST3-color-theme.json",
+		// 	File:   "built-in/monokai-color-theme.json",
 		// 	Dark:   true,
 		// },
-
 	}
 
 	for _, theme := range themes {
@@ -273,26 +271,26 @@ func makeTemplateParams(theme Theme, content []byte) TemplateParams {
 		Dark:         theme.Dark,
 		// Layout
 		Background:         find(data, "editor.background"),
-		Foreground:         find(data, "foreground", "input.foreground"), // TODO: if it's not there then: editor.foreground
+		Foreground:         find(data, "foreground", "input.foreground", "editor.foreground"),
 		Selection:          find(data, "editor.selectionBackground"),
 		Cursor:             find(data, "editorCursor.foreground", "foreground"),
 		DropdownBackground: find(data, "editor.background"),
-		DropdownBorder:     find(data, "dropdown.border", "foreground"),
+		DropdownBorder:     find(data, "dropdown.border", "foreground", "input.foreground", "editor.foreground"),
 		ActiveLine:         find(data, "editor.lineHighlightBackground", "editor.selectionBackground"),
 		MatchingBracket:    find(data, "editorBracketMatch.background", "editor.lineHighlightBackground", "editor.selectionBackground"),
 		// Syntax
 		Keyword:   find(data, "keyword"),
 		Storage:   find(data, "storage", "keyword"),
-		Variable:  find(data, "variable", "variable.parameter", "variable.other", "variable.language", "foreground"),
-		Parameter: find(data, "variable.parameter", "variable.other", "variable"),
-		Function:  find(data, "entity.name.function", "support.function", "entity.name", "support"),
+		Variable:  find(data, "variable", "variable.parameter", "variable.other", "variable.language", "foreground", "input.foreground", "editor.foreground"),
+		Parameter: find(data, "variable.parameter", "variable.other", "variable", "foreground", "input.foreground", "editor.foreground"),
+		Function:  find(data, "entity.name.function", "support.function", "entity.name", "support", "foreground", "input.foreground", "editor.foreground"),
 		String:    find(data, "string"),
 		Constant:  find(data, "constant", "constant.character", "constant.keyword"),
 		Type:      find(data, "entity.name.type", "entity.name.class", "support.type", "support"),
-		Class:     find(data, "entity.name.class", "entity.name"),
+		Class:     find(data, "entity.name.class", "entity.name", "foreground", "input.foreground", "editor.foreground"),
 		Number:    find(data, "constant.numeric", "constant"),
 		Comment:   find(data, "comment"),
-		Heading:   find(data, "markup.heading", "markup.heading.setext", "heading.1.markdown entity.name"),
+		Heading:   find(data, "markup.heading", "markup.heading.setext", "heading.1.markdown entity.name", "foreground", "input.foreground", "editor.foreground"),
 		Invalid:   find(data, "invalid", "editorError.foreground", "errorForeground", "foreground", "input.foreground"),
 		Regexp:    find(data, "string.regexp", "string"),
 	}
