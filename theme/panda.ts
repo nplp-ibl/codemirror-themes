@@ -4,33 +4,33 @@ import {HighlightStyle, syntaxHighlighting} from '@codemirror/language'
 import {tags as t} from '@lezer/highlight'
 
 export const config = {
-  name: 'tokyoNightDay',
-  dark: false,
-  background: '#e1e2e7',
-  foreground: '#3760bf',
-  selection: '#99a7df',
-  cursor: '#3760bf',
-  dropdownBackground: '#d5d6db',
-  dropdownBorder: '#c1c2c7',
-  activeLine: '#5f5faf11',
-  matchingBracket: '#99a7df',
-  keyword: '#007197',
-  storage: '#3760bf',
-  variable: '#3760bf',
-  parameter: '#3760bf',
-  function: '#3760bf',
-  string: '#587539',
-  constant: '#3760bf',
-  type: '#007197',
-  class: '#3760bf',
-  number: '#b15c00',
-  comment: '#848cb5',
-  heading: '#b15c00',
-  invalid: '#f52a65',
-  regexp: '#587539',
+  name: 'panda',
+  dark: true,
+  background: '#292A2B',
+  foreground: '#E6E6E6',
+  selection: '#FFB86C40',
+  cursor: '#FF4B82',
+  dropdownBackground: '#292A2B',
+  dropdownBorder: '#E6E6E6',
+  activeLine: '#31353a',
+  matchingBracket: '#31353a',
+  keyword: '#FF75B5',
+  storage: '#FFB86C',
+  variable: '#E6E6E6',
+  parameter: '#BBBBBB',
+  function: '#6FC1FF',
+  string: '#19f9d8',
+  constant: '#FFB86C',
+  type: '#FFCC95',
+  class: '#E6E6E6',
+  number: '#FFB86C',
+  comment: '#676B79',
+  heading: '#E6E6E6',
+  invalid: '#FF4B82',
+  regexp: '#6FC1FF',
 }
 
-export const tokyoNightDayTheme = EditorView.theme({
+export const pandaTheme = EditorView.theme({
   '&': {
     color: config.foreground,
     backgroundColor: config.background,
@@ -95,7 +95,7 @@ export const tokyoNightDayTheme = EditorView.theme({
   },
 }, {dark: config.dark})
 
-export const tokyoNightDayHighlightStyle = HighlightStyle.define([
+export const pandaHighlightStyle = HighlightStyle.define([
   {tag: t.keyword, color: config.keyword},
   {tag: [t.name, t.deleted, t.character, t.macroName], color: config.variable},
   {tag: [t.propertyName], color: config.function},
@@ -118,7 +118,7 @@ export const tokyoNightDayHighlightStyle = HighlightStyle.define([
   {tag: t.strikethrough, textDecoration: 'line-through'},
 ])
 
-export const tokyoNightDay: Extension = [
-  tokyoNightDayTheme,
-  syntaxHighlighting(tokyoNightDayHighlightStyle),
+export const panda: Extension = [
+  pandaTheme,
+  syntaxHighlighting(pandaHighlightStyle),
 ]

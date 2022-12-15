@@ -27,7 +27,7 @@
   "scripts": {
     "prepare": "rm -rf ./dist && rollup -c",
     "dev": "vite ./example",
-    "screenshot": "capture-website http://localhost:5173 --timeout=100 --width=1480 --height=1470 > screenshot.png"
+    "screenshot": "capture-website http://localhost:5173 --timeout=100 --width=1480 --height=2203 > screenshot.png"
   },
   "devDependencies": {
     "@codemirror/autocomplete": "^6.3.0",

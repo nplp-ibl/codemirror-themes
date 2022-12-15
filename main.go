@@ -5,7 +5,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"fmt"
-	"github.com/tinode/jsonco"
 	"io"
 	"io/ioutil"
 	"log"
@@ -14,6 +13,8 @@ import (
 	"reflect"
 	"strings"
 	"text/template"
+
+	"github.com/tinode/jsonco"
 )
 
 // Theme ...
@@ -28,6 +29,13 @@ type Theme struct {
 func main() {
 	themes := []Theme{
 		{
+			Name:   "aura",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/DaltonMenezes/vsextensions/aura-theme/2.1.2/vspackage",
+			Target: "aura",
+			File:   "extension/themes/aura-soft-dark-color-theme.json",
+			Dark:   true,
+		},
+		{
 			Name:   "dracula",
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/dracula-theme/vsextensions/theme-dracula/2.24.2/vspackage",
 			Target: "dracula",
@@ -35,31 +43,10 @@ func main() {
 			Dark:   true,
 		},
 		{
-			Name:   "solarized-light",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/2.0.3/vspackage",
-			Target: "solarized",
-			File:   "extension/themes/light-color-theme.json",
-			Dark:   false,
-		},
-		{
-			Name:   "solarized-dark",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/2.0.3/vspackage",
-			Target: "solarized",
-			File:   "extension/themes/dark-color-theme.json",
-			Dark:   true,
-		},
-		{
-			Name: "material-light",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/33.4.0/vspackage",
-			Target: "material",
-			File:   "extension/build/themes/Material-Theme-Lighter.json",
-			Dark:   false,
-		},
-		{
-			Name:   "material-dark",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/33.4.0/vspackage",
-			Target: "material",
-			File:   "extension/build/themes/Material-Theme-Default.json",
+			Name:   "github-dark",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/github-vscode-theme/6.0.0/vspackage",
+			Target: "github",
+			File:   "extension/themes/dark.json",
 			Dark:   true,
 		},
 		{
@@ -70,31 +57,80 @@ func main() {
 			Dark:   false,
 		},
 		{
-			Name:   "github-dark",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/GitHub/vsextensions/github-vscode-theme/6.0.0/vspackage",
-			Target: "github",
-			File:   "extension/themes/dark.json",
+			Name:   "material-dark",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/33.4.0/vspackage",
+			Target: "material",
+			File:   "extension/build/themes/Material-Theme-Default.json",
 			Dark:   true,
 		},
 		{
-			Name:   "aura",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/DaltonMenezes/vsextensions/aura-theme/2.1.2/vspackage",
-			Target: "aura",
-			File:   "extension/themes/aura-soft-dark-color-theme.json",
+			Name: 	"material-light",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/Equinusocio/vsextensions/vsc-material-theme/33.4.0/vspackage",
+			Target: "material",
+			File:   "extension/build/themes/Material-Theme-Lighter.json",
+			Dark:   false,
+		},
+		{
+			Name: 	"mirage",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/tristanremy/vsextensions/mirage/0.3.10/vspackage",
+			Target: "mirage",
+			File:   "extension/themes/Mirage-color-theme.json",
+			Dark:   false,
+		},
+		{
+			Name:   "one-dark-pro",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/zhuangtongfa/vsextensions/Material-theme/3.15.6/vspackage",
+			Target: "one-dark-pro",
+			File:   "extension/themes/OneDark-Pro.json",
+			Dark:   true,
+		},
+		{
+			Name:   "panda",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/tinkertrain/vsextensions/theme-panda/1.3.0/vspackage",
+			Target: "panda",
+			File:   "extension/dist/Panda.json",
+			Dark:   true,
+		},
+		{
+			Name:   "pastel",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/cval/vsextensions/pastel-theme/1.4.1/vspackage",
+			Target: "pastel",
+			File:   "extension/themes/pastel-color-theme.json",
+			Dark:   true,
+		},
+		{
+			Name:   "shades-of-purple",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ahmadawais/vsextensions/shades-of-purple/7.1.5/vspackage",
+			Target: "shades-of-purple",
+			File:   "extension/themes/shades-of-purple-color-theme.json",
+			Dark:   true,
+		},
+		{
+			Name:   "solarized-dark",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/2.0.3/vspackage",
+			Target: "solarized",
+			File:   "extension/themes/dark-color-theme.json",
+			Dark:   true,
+		},
+		{
+			Name:   "solarized-light",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/ryanolsonx/vsextensions/solarized/2.0.3/vspackage",
+			Target: "solarized",
+			File:   "extension/themes/light-color-theme.json",
+			Dark:   false,
+		},
+		{
+			Name:   "tokyo-night-storm",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/0.9.4/vspackage",
+			Target: "tokyoś",
+			File:   "extension/themes/tokyo-night-storm-color-theme.json",
 			Dark:   true,
 		},
 		{
 			Name:   "tokyo-night",
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/0.9.4/vspackage",
-			Target: "tokyo-night",
+			Target: "tokyo",
 			File:   "extension/themes/tokyo-night-color-theme.json",
-			Dark:   true,
-		},
-		{
-			Name:   "tokyo-night-storm",
-			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/enkia/vsextensions/tokyo-night/0.9.4/vspackage",
-			Target: "tokyo-night-storm",
-			File:   "extension/themes/tokyo-night-storm-color-theme.json",
 			Dark:   true,
 		},
 		{
@@ -104,6 +140,7 @@ func main() {
 			File:   "extension/themes/zenburn.json",
 			Dark:   true,
 		},
+
 		// TODO: built-in theme - data from built-in folder instead of marketplace
 		// {
 		// 	Name:   "monokai",
@@ -114,19 +151,19 @@ func main() {
 	}
 
 	for _, theme := range themes {
-		fmt.Println("Process theme: ", theme.Name)
+		fmt.Println("Processing theme: ", theme.Name)
 		if _, err := os.Stat("./tmp/" + theme.Target + ".zip"); os.IsNotExist(err) {
 			fmt.Println("  Download theme")
 			downloadTheme(theme)
 		}
 
-		fmt.Println("  Extract theme")
+		fmt.Println("  Extracting theme")
 		content, err := extractTheme(theme)
 		if err != nil {
 			log.Fatal(err)
 		}
 
-		fmt.Println("  Generate template")
+		fmt.Println("  Generating template")
 		generateTheme(theme, content)
 	}
 }
@@ -271,7 +308,7 @@ func makeTemplateParams(theme Theme, content []byte) TemplateParams {
 		Dark:         theme.Dark,
 		// Layout
 		Background:         find(data, "editor.background"),
-		Foreground:         find(data, "foreground", "input.foreground", "editor.foreground"),
+		Foreground:         find(data, "foreground", "input.foreground", "editor.foreground", "variable.other.readwrite"),
 		Selection:          find(data, "editor.selectionBackground"),
 		Cursor:             find(data, "editorCursor.foreground", "foreground"),
 		DropdownBackground: find(data, "editor.background"),
@@ -279,12 +316,12 @@ func makeTemplateParams(theme Theme, content []byte) TemplateParams {
 		ActiveLine:         find(data, "editor.lineHighlightBackground", "editor.selectionBackground"),
 		MatchingBracket:    find(data, "editorBracketMatch.background", "editor.lineHighlightBackground", "editor.selectionBackground"),
 		// Syntax
-		Keyword:   find(data, "keyword"),
+		Keyword:   find(data, "keyword", "foreground", "input.foreground", "editor.foreground"),
 		Storage:   find(data, "storage", "keyword"),
 		Variable:  find(data, "variable", "variable.parameter", "variable.other", "variable.language", "foreground", "input.foreground", "editor.foreground"),
 		Parameter: find(data, "variable.parameter", "variable.other", "variable", "foreground", "input.foreground", "editor.foreground"),
 		Function:  find(data, "entity.name.function", "support.function", "entity.name", "support", "foreground", "input.foreground", "editor.foreground"),
-		String:    find(data, "string"),
+		String:    find(data, "string", "string.quoted" ),
 		Constant:  find(data, "constant", "constant.character", "constant.keyword"),
 		Type:      find(data, "entity.name.type", "entity.name.class", "support.type", "support"),
 		Class:     find(data, "entity.name.class", "entity.name", "foreground", "input.foreground", "editor.foreground"),
@@ -327,7 +364,7 @@ func extractTheme(theme Theme) ([]byte, error) {
 		return content, nil
 	}
 
-	return nil, fmt.Errorf("Cound not find file %s in extension", theme.File)
+	return nil, fmt.Errorf("Could not find file %s in extension", theme.File)
 }
 
 func downloadTheme(theme Theme) {
