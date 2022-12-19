@@ -25,6 +25,7 @@ import {noctis} from '../theme/noctis'
 import {oneDarkPro} from '../theme/one-dark-pro'
 import {panda} from '../theme/panda'
 import {pastel} from '../theme/pastel'
+import {poimandres} from '../theme/poimandres'
 import {raDark} from '../theme/ra-dark'
 import {rubyBlue} from '../theme/ruby-blue'
 import {setiBlack} from '../theme/seti-black'
@@ -84,6 +85,7 @@ createEditor(noctis,'noctis')
 createEditor(oneDarkPro, 'oneDarkPro')
 createEditor(panda,'panda')
 createEditor(pastel,'pastel')
+createEditor(poimandres,'poimandres')
 createEditor(raDark,'raDark')
 createEditor(rubyBlue,'rubyBlue')
 createEditor(setiBlack,'setiBlack')
