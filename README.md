@@ -110,16 +110,12 @@ npm i
 - [x] rubyblue
 - [x] cobalt
 - [x] ayu
-- [ ] gruvbox-dark
-- [ ] gruvbox-light
-- [ ] Noctis (wszystkie): https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis
-- [ ] CYBERPUNK: https://marketplace.visualstudio.com/items?itemName=Endormi.2077-theme
-- [ ] RA Dark: https://marketplace.visualstudio.com/items?itemName=rahmanyerli.ra-dark
-- [ ] Seti Black: https://marketplace.visualstudio.com/items?itemName=bobsparadox.seti-black
-- [ ] Pitch Black:
-- [ ] https://marketplace.visualstudio.com/items?itemName=viktorqvarfordt.vscode-pitch-black-theme
-- [ ] poimandres: https://marketplace.visualstudio.com/items?itemName=pmndrs.pmndrs
-- [ ] One Monokai: https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai
-- [ ] monokai
-
+- [x] gruvbox-dark
+- [x] gruvbox-light
+- [x] Noctis (wszystkie): 
+- [x] CYBERPUNK
+- [x] RA Dark
+- [x] monokai
+- [x] Seti Black
+- [x] poimandres
 height: 367 * row_count + 1 
