@@ -288,14 +288,6 @@ func main() {
 			File:   "extension/themes/zenburn.json",
 			Dark:   true,
 		},
-
-		// TODO: built-in theme - data from built-in folder instead of marketplace
-		// {
-		// 	Name:   "monokai",
-		// 	Target: "monokai",
-		// 	File:   "built-in/monokai-color-theme.json",
-		// 	Dark:   true,
-		// },
 	}
 
 	for _, theme := range themes {
