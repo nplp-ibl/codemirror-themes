@@ -36,6 +36,34 @@ func main() {
 			Dark:   true,
 		},
 		{
+			Name:   "ayu-dark",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.0.5/vspackage",
+			Target: "ayu",
+			File:   "extension/ayu-dark.json",
+			Dark:   true,
+		},
+		{
+			Name:   "ayu-mirage",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.0.5/vspackage",
+			Target: "ayu",
+			File:   "extension/ayu-mirage.json",
+			Dark:   true,
+		},
+		{
+			Name:   "ayu",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/teabyii/vsextensions/ayu/1.0.5/vspackage",
+			Target: "ayu",
+			File:   "extension/ayu-light.json",
+			Dark:   false,
+		},
+		{
+			Name:   "cobalt",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/wesbos/vsextensions/theme-cobalt2/2.3.0/vspackage",
+			Target: "cobalt",
+			File:   "extension/theme/cobalt2.json",
+			Dark:   true,
+		},
+		{
 			Name:   "dracula",
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/dracula-theme/vsextensions/theme-dracula/2.24.2/vspackage",
 			Target: "dracula",
@@ -75,7 +103,7 @@ func main() {
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/tristanremy/vsextensions/mirage/0.3.10/vspackage",
 			Target: "mirage",
 			File:   "extension/themes/Mirage-color-theme.json",
-			Dark:   false,
+			Dark:   true,
 		},
 		{
 			Name:   "one-dark-pro",
@@ -96,6 +124,13 @@ func main() {
 			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/cval/vsextensions/pastel-theme/1.4.1/vspackage",
 			Target: "pastel",
 			File:   "extension/themes/pastel-color-theme.json",
+			Dark:   true,
+		},
+		{
+			Name:   "ruby-blue",
+			URL:    "https://marketplace.visualstudio.com/_apis/public/gallery/publishers/hirofumii/vsextensions/rubyblue-theme/2.1.0/vspackage",
+			Target: "ruby-blue",
+			File:   "extension/themes/RubyBlue.tmTheme.json",
 			Dark:   true,
 		},
 		{
@@ -308,7 +343,7 @@ func makeTemplateParams(theme Theme, content []byte) TemplateParams {
 		Dark:         theme.Dark,
 		// Layout
 		Background:         find(data, "editor.background"),
-		Foreground:         find(data, "foreground", "input.foreground", "editor.foreground", "variable.other.readwrite"),
+		Foreground:         find(data, "foreground", "editor.foreground", "input.foreground", "variable.other.readwrite"),
 		Selection:          find(data, "editor.selectionBackground"),
 		Cursor:             find(data, "editorCursor.foreground", "foreground"),
 		DropdownBackground: find(data, "editor.background"),

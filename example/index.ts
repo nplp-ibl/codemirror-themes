@@ -1,4 +1,8 @@
 import {aura} from '../theme/aura'
+import {ayuDark} from '../theme/ayu-dark'
+import {ayuMirage} from '../theme/ayu-mirage'
+import {ayu} from '../theme/ayu'
+import {cobalt} from '../theme/cobalt'
 import {dracula} from '../theme/dracula'
 import {githubDark} from '../theme/github-dark'
 import {githubLight} from '../theme/github-light'
@@ -8,6 +12,7 @@ import {mirage} from '../theme/mirage'
 import {oneDarkPro} from '../theme/one-dark-pro'
 import {panda} from '../theme/panda'
 import {pastel} from '../theme/pastel'
+import {rubyBlue} from '../theme/ruby-blue'
 import {shadesOfPurple} from '../theme/shades-of-purple'
 import {solarizedDark} from '../theme/solarized-dark'
 import {solarizedLight} from '../theme/solarized-light'
@@ -38,6 +43,10 @@ const createEditor = (theme, name) => {
 }
 
 createEditor(aura, 'aura')
+createEditor(ayuDark, 'ayuDark')
+createEditor(ayuMirage, 'ayuMirage')
+createEditor(ayu, 'ayu')
+createEditor(cobalt, 'cobalt')
 createEditor(dracula, 'dracula')
 createEditor(githubDark, 'githubDark')
 createEditor(githubLight,'githubLight')
@@ -47,6 +56,7 @@ createEditor(mirage,'mirage')
 createEditor(oneDarkPro, 'oneDarkPro')
 createEditor(panda,'panda')
 createEditor(pastel,'pastel')
+createEditor(rubyBlue,'rubyBlue')
 createEditor(shadesOfPurple,'shadesOfPurple')
 createEditor(solarizedDark,'solarizedDark')
 createEditor(solarizedLight,'solarizedLight')

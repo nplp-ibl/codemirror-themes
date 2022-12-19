@@ -4,33 +4,33 @@ import {HighlightStyle, syntaxHighlighting} from '@codemirror/language'
 import {tags as t} from '@lezer/highlight'
 
 export const config = {
-  name: 'mirage',
+  name: 'ayuDark',
   dark: true,
-  background: '#1B2738',
-  foreground: '#D9E9FFAA',
-  selection: '#4D6390',
-  cursor: '#FFFFFF',
-  dropdownBackground: '#1B2738',
-  dropdownBorder: '#0D1C2B',
-  activeLine: '#33426533',
-  matchingBracket: '#42557B77',
-  keyword: '#DDB3FF',
-  storage: '#DDB3FF',
-  variable: '#FF9999',
-  parameter: '#FF9999',
-  function: '#7FB5FF',
-  string: '#85CC95',
-  constant: '#FFB38C',
-  type: '#FFB38C',
-  class: '#7FB5FF',
-  number: '#FFB38C',
-  comment: '#3D5A7F',
-  heading: '#FF9999',
-  invalid: '#FF4C4C',
-  regexp: '#57B6C2',
+  background: '#0b0e14',
+  foreground: '#565b66',
+  selection: '#409fff4d',
+  cursor: '#e6b450',
+  dropdownBackground: '#0b0e14',
+  dropdownBorder: '#565b6645',
+  activeLine: '#131721',
+  matchingBracket: '#6c73804d',
+  keyword: '#ff8f40',
+  storage: '#ff8f40',
+  variable: '#bfbdb6',
+  parameter: '#d2a6ff',
+  function: '#ffb454',
+  string: '#aad94c',
+  constant: '#95e6cb',
+  type: '#39bae6',
+  class: '#59c2ff',
+  number: '#d2a6ff',
+  comment: '#acb6bf8c',
+  heading: '#aad94c',
+  invalid: '#d95757',
+  regexp: '#95e6cb',
 }
 
-export const mirageTheme = EditorView.theme({
+export const ayuDarkTheme = EditorView.theme({
   '&': {
     color: config.foreground,
     backgroundColor: config.background,
@@ -95,7 +95,7 @@ export const mirageTheme = EditorView.theme({
   },
 }, {dark: config.dark})
 
-export const mirageHighlightStyle = HighlightStyle.define([
+export const ayuDarkHighlightStyle = HighlightStyle.define([
   {tag: t.keyword, color: config.keyword},
   {tag: [t.name, t.deleted, t.character, t.macroName], color: config.variable},
   {tag: [t.propertyName], color: config.function},
@@ -118,7 +118,7 @@ export const mirageHighlightStyle = HighlightStyle.define([
   {tag: t.strikethrough, textDecoration: 'line-through'},
 ])
 
-export const mirage: Extension = [
-  mirageTheme,
-  syntaxHighlighting(mirageHighlightStyle),
+export const ayuDark: Extension = [
+  ayuDarkTheme,
+  syntaxHighlighting(ayuDarkHighlightStyle),
 ]

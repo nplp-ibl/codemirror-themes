@@ -106,15 +106,12 @@ npm i
 - [x] shades of purple
 - [x] panda-syntax
 - [x] pastel
-- [ ] mirage
-- [ ] rubyblue
-- [ ] cobalt
-- [ ] blackboard
-- [ ] ayu
-- [ ] nord
+- [x] mirage
+- [x] rubyblue
+- [x] cobalt
+- [x] ayu
 - [ ] gruvbox-dark
 - [ ] gruvbox-light
-
 - [ ] Noctis (wszystkie): https://marketplace.visualstudio.com/items?itemName=liviuschera.noctis
 - [ ] CYBERPUNK: https://marketplace.visualstudio.com/items?itemName=Endormi.2077-theme
 - [ ] RA Dark: https://marketplace.visualstudio.com/items?itemName=rahmanyerli.ra-dark
@@ -123,7 +120,6 @@ npm i
 - [ ] https://marketplace.visualstudio.com/items?itemName=viktorqvarfordt.vscode-pitch-black-theme
 - [ ] poimandres: https://marketplace.visualstudio.com/items?itemName=pmndrs.pmndrs
 - [ ] One Monokai: https://marketplace.visualstudio.com/items?itemName=azemoh.one-monokai
-
 - [ ] monokai
 
 height: 367 * row_count + 1 
